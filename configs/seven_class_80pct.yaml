@@ -1,0 +1,77 @@
+# Global-instance 80% visible / 20% hidden annotation protocol.
+data_root: data/buildings
+prepared_dir: outputs/prepared_80pct
+run_dir: outputs/runs/seven_class_80pct
+swin_weights: weights/swin_base_in22k.safetensors
+text_weights: weights/RemoteCLIP-ViT-B-32.pt
+text_cache: weights/remoteclip_seven_class_text.pt
+classes:
+- Residential
+- Commercial
+- Administrative
+- Healthcare
+- Educational
+- Sport and art
+- Industrial
+prompts:
+- Residential buildings used for housing and everyday domestic activities.
+- Commercial buildings used for retail, shopping, and commercial services.
+- Administrative buildings used for government and public administration.
+- Healthcare buildings used for medical treatment and healthcare services, including
+  hospitals and clinics.
+- Educational buildings used for teaching, learning, and educational activities.
+- Buildings used for sports, arts, and cultural activities, including sports venues
+  and cultural facilities.
+- Industrial buildings used for manufacturing, production, and industrial processing.
+source_label_map:
+  0: 0
+  1: 1
+  2: 2
+  3: 3
+  4: 4
+  5: 5
+  6: 6
+  7: 7
+  8: 255
+  255: 255
+json_folder: json_en
+crop_size: 1024
+ntl_channels: 3
+ntl_scalar: luminance_rgb
+token_width: 512
+spatial_width: 256
+attention_dim: 512
+gaussian_bases: 16
+decoder_heads: 8
+decoder_window: 7
+activation_checkpointing: true
+graph_rho: 0.85
+graph_steps: 10
+graph_smoothing: 1.0
+graph_variant: full
+gamma: 2.0
+lambda_topo: 0.3
+lambda_picr: 0.1
+annotation_fraction: 0.8
+seed: 42
+split_block_m: 5000
+validation_fraction: 0.2
+split_buffer_m: 0
+split_manifest: null
+exclude_clipped_aux: true
+minimum_attribute_coverage: 0.5
+epochs: 100
+micro_batch: 4
+accumulation_steps: 4
+learning_rate: 0.0001
+min_learning_rate: 1.0e-06
+weight_decay: 0.0001
+warmup_epochs: 3
+num_workers: 2
+amp: true
+gradient_clip: 1.0
+log_every: 10
+save_every_epochs: 1
+augment_flip_rotate: true
+source_manifest: data/annotation_80pct/source_manifest.json
+annotation_protocol: predefined_global_ids

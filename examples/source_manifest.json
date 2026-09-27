@@ -1,0 +1,63 @@
+{
+  "schema_version": 2,
+  "classes": [
+    "Residential",
+    "Commercial",
+    "Administrative",
+    "Healthcare",
+    "Educational",
+    "Sport and art",
+    "Industrial"
+  ],
+  "annotation_policy": {
+    "visible_fraction": 0.8,
+    "seed": 42
+  },
+  "records": [
+    {
+      "id": "train_001",
+      "image_file": "train_001.tif",
+      "split": "train",
+      "geometry_format": "instance_raster",
+      "paths": {
+        "rgb": "data/buildings/img/train_001.tif",
+        "height": "data/buildings/BH/train_001.tif",
+        "ntl": "data/buildings/NL/train_001.tif",
+        "label": "data/buildings/label/train_001.tif",
+        "instance_id": "data/buildings/instance_id/train_001.tif",
+        "valid_mask": "data/buildings/valid_mask/train_001.tif",
+        "instances": "data/buildings/instances/train_001.json"
+      }
+    },
+    {
+      "id": "val_001",
+      "image_file": "val_001.tif",
+      "split": "val",
+      "geometry_format": "instance_raster",
+      "paths": {
+        "rgb": "data/buildings/img/val_001.tif",
+        "height": "data/buildings/BH/val_001.tif",
+        "ntl": "data/buildings/NL/val_001.tif",
+        "label": "data/buildings/label/val_001.tif",
+        "instance_id": "data/buildings/instance_id/val_001.tif",
+        "valid_mask": "data/buildings/valid_mask/val_001.tif",
+        "instances": "data/buildings/instances/val_001.json"
+      }
+    },
+    {
+      "id": "test_001",
+      "image_file": "test_001.tif",
+      "split": "test",
+      "geometry_format": "instance_raster",
+      "paths": {
+        "rgb": "data/buildings/img/test_001.tif",
+        "height": "data/buildings/BH/test_001.tif",
+        "ntl": "data/buildings/NL/test_001.tif",
+        "label": "data/buildings/label/test_001.tif",
+        "instance_id": "data/buildings/instance_id/test_001.tif",
+        "valid_mask": "data/buildings/valid_mask/test_001.tif",
+        "instances": "data/buildings/instances/test_001.json"
+      }
+    }
+  ]
+}
